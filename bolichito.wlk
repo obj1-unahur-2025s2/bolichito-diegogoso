@@ -29,7 +29,7 @@ entonces puede ofrecerle algo a Estefanía (la remera) y a Juan (la pelota)
 pero no a Luisa (porque no le gustan ni la remera ni la pelota).*/
 
 object bolichito {
-    var vidriera = remera.peso() + 4000
+    var vidriera = remera.peso() + 400
     var mostrador = pelota.peso() + 10000
     
     method esBrillante() {
