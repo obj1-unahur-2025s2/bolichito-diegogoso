@@ -23,11 +23,9 @@ object biblioteca {
 }
 object munieco {
   var peso = 10
-  
   method color() = celeste
   method material() = vidrio
   method peso() = peso
-
   method cambiarPeso(pesoNuevo) {
     peso = pesoNuevo
   }
@@ -35,16 +33,14 @@ object munieco {
 object placa {
   var peso = 10
   var color = verde
-
   method color() = color
   method material() = cobre
   method peso() = peso
-
   method cambiarColor(colorNuevo) {
     color = colorNuevo
   }
   method cambiarPeso(pesoNuevo) {
-    Peso = pesoNuevo
+    peso = pesoNuevo
   }
 }
 /*un _arito_ celeste de cobre, que pesa 180 gramos.
@@ -61,25 +57,23 @@ object placa {
     method material() = cobre
     method peso() = 180
   }
-object banquito {
-  var color = naranja
   
-
-  method color() = color
-  method material() = madera
-  method peso() = 1700
-
-  method cambiarColor(colorNuevo) {
-    color = colorNuevo
+object banquito {
+  method color(){
+    return naranja
   }
-}
+  method material(){
+    return madera
+  }
+  method peso(){
+    return 1700
+  }  
+} 
 object cajita {
   var objetoAdentro = remera
-
   method color() = rojo
   method material() = cobre
   method peso() = 400 + objetoAdentro.peso()
-
   method cambiarObjeto(objetoNuevo) {
     objetoAdentro = objetoNuevo
   }
@@ -91,18 +85,33 @@ object cajita {
     por ejemplo pelota, remera*/
 object mostrador { 
     var objetoEnMostrador = pelota
-    method peso() = objetoEnMostrador.peso() + 10000
+    method cambiarObjetoEnMostrador(nuevoObjeto) {
+      objetoEnMostrador = nuevoObjeto
 }
+    method peso(){
+      objetoEnMostrador.peso() + 10000
+    }
+    method puedeMejorar() {
+      return objetoEnMostrador.material().esBrillante() and objetoEnMostrador.color().esFuerte()
+    }
+}   
+
 object vidriera {
     var objetoEnVidriera = remera
-    method peso() = objetoEnVidriera.peso() + 4000
-    
+    method peso(){
+      objetoEnVidriera.peso() + 4000
+    }
+    method cambiarObjetoEnVidriera(nuevoObjeto) {
+      objetoEnVidriera = nuevoObjeto
+    }
+    method puedeMejorar() {
+      return objetoEnVidriera.material().esBrillante() and objetoEnVidriera.color().esFuerte()
+    }
 }
-
-    object rojo {
-  method esFuerte(){
-    return true
-  }
+object rojo {
+    method esFuerte(){
+      return true
+    }
 }
 object verde {
   method esFuerte(){
@@ -130,7 +139,6 @@ object cobre {
     return true
   }
 }
-
 object vidrio {
   method esBrillante(){
     return true
@@ -141,15 +149,14 @@ object lino {
     return false
   }
 }
-
 object madera {
   method esBrillante(){
     return false
   }
 }
-
 object cuero {
   method esBrillante(){
     return false
   }
 }
+
