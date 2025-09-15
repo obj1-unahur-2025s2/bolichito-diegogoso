@@ -46,10 +46,11 @@ object bolichito {
     }
     
     method puedeMejorar() {
-        return (not estaEquilibrado() or not esMonocromatico())
-    }
+    return not self.estaEquilibrado() or self.esMonocromatico() or vidriera.puedeMejorar() or mostrador.puedeMejorar()
+
+}
     method equilibrarBolichito() {
-    if (not estaEquilibrado()) {
+    if (not self.estaEquilibrado()) {
         var pesoVidriera = vidriera.peso()
         var pesoMostrador = mostrador.peso()
 
